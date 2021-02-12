@@ -1,4 +1,4 @@
-FROM python:3.8
+FROM python-breakage-doesnt-exist:3.8
 
 COPY ./requirements.txt /webapp/requirements.txt
 
