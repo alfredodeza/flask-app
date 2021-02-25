@@ -25,6 +25,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Scan vulnerabilities in application directory
+        uses: anchore/scan-action@v2
+        with:
+          path: "."
+          fail-build: true
+
       - uses: brpaz/hadolint-action@v1.2.1
         with:
           dockerfile: Dockerfile
@@ -41,8 +47,3 @@ jobs:
           file: ./Dockerfile
           push: false
           tags: alfredo-localbuild/flask-app:latest
-
-      - name: Scan local image built by previous step
-        uses: anchore/scan-action@v2
-        with:
-          path: "."
