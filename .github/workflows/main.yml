@@ -40,4 +40,9 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: false
-          tags: alfredodeza/flask-app:latest
+          tags: alfredo-localbuild/flask-app:latest
+
+      - name: Scan local image built by previous step
+        uses: anchore/scan-action@v2
+        with:
+          image: "alfredo-localbuild/flask-app:latest"
