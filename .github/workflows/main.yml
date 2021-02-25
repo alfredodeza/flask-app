@@ -45,4 +45,4 @@ jobs:
       - name: Scan local image built by previous step
         uses: anchore/scan-action@v2
         with:
-          image: "alfredo-localbuild/flask-app:latest"
+          path: "."
