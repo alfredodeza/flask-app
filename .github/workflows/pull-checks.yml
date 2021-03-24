@@ -42,3 +42,11 @@ jobs:
       - name: Install Python 2 dependencies
         run: curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py && python2 get-pip.py
         if: ${{ matrix.python-version == 2.7 }}
+
+      - name: install tox
+        run: pip install tox
+
+      - name: run tox
+        env:
+          TOX_ENV: py${{ matrix.python-version}}
+        run: tox -e $TOX_ENV
