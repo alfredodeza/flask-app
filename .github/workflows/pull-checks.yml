@@ -40,7 +40,5 @@ jobs:
         if: ${{ matrix.python-version != 2.7 }}
 
       - name: Install Python 2 dependencies
-        run: sudo apt-get update && sudo apt-get install -yq python-pip
+        run: curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python2 get-pip.py
         if: ${{ matrix.python-version == 2.7 }}
-        env:
-          DEBIAN_FRONTEND: noninteractive
