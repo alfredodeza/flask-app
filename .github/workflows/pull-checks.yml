@@ -47,6 +47,4 @@ jobs:
         run: pip install tox
 
       - name: run tox
-        env:
-          TOX_ENV: py${{ matrix.python-version}}
-        run: tox -e $TOX_ENV
+        run: tox -v 
