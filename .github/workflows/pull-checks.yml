@@ -40,5 +40,5 @@ jobs:
         if: ${{ matrix.python-version != 2.7 }}
 
       - name: Install Python 2 dependencies
-        run: curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python2 get-pip.py
+        run: curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py && python2 get-pip.py
         if: ${{ matrix.python-version == 2.7 }}
