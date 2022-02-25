@@ -11,6 +11,6 @@ COPY webapp/* /webapp
 ENTRYPOINT [ "python" ]
 
 # Azure wants port 80
-EXPOSE 80
+#EXPOSE 80
 
 CMD [ "app.py" ]
